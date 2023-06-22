@@ -7,6 +7,7 @@ import { JobSeekerComponent } from './job-seeker/job-seeker.component';
 import { CompanyComponent } from './company/company.component';
 import { JobComponent } from './job/job.component';
 import { JobApplyComponent } from './job-apply/job-apply.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 
 
@@ -57,6 +58,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    NgxDatatableModule
   ]
 })
 export class ModulesModule { }

@@ -1,1 +1,45 @@
-<p>company works!</p>
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink=".">Tables</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Company Table</li>
+  </ol>
+</nav>
+
+
+
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Company Table</h6>
+        <div class="table-responsive">
+          <ngx-datatable
+            class="bootstrap"
+            [rows]="rows"
+            [loadingIndicator]="loadingIndicator"
+            [columnMode]="ColumnMode.force"
+            [footerHeight]="50"
+            [limit]="10"
+            rowHeight="auto"
+          >
+            <ngx-datatable-column name="companyName"></ngx-datatable-column>
+            <ngx-datatable-column name="sector"></ngx-datatable-column>
+            <ngx-datatable-column name="companyEmail"></ngx-datatable-column>
+            <ngx-datatable-column name="telephone"></ngx-datatable-column>
+            <ngx-datatable-column name="employees" ></ngx-datatable-column>
+            <ngx-datatable-column name="linkedId" ></ngx-datatable-column>
+            <ngx-datatable-column name="location" ></ngx-datatable-column>
+            <ngx-datatable-column name="owner" ></ngx-datatable-column>
+            <ngx-datatable-column name="established"></ngx-datatable-column>
+            <ngx-datatable-column name="Actions">
+              <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                <button (click)="deleteRow(row)" type="button" class="btn btn-danger">  <i class="mdi mdi-delete"></i></button>
+              </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+
+  </div>
+      </div>
+    </div>
+  </div>
+</div>

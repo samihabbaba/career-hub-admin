@@ -1,1 +1,43 @@
-<p>job works!</p>
+<nav class="page-breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a routerLink=".">Tables</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Job Table</li>
+  </ol>
+</nav>
+
+
+
+<div class="row">
+  <div class="col-md-12 stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="card-title">Jobs Table</h6>
+        <div class="table-responsive">
+          <ngx-datatable
+            class="bootstrap"
+            [rows]="rows"
+            [loadingIndicator]="loadingIndicator"
+            [columnMode]="ColumnMode.force"
+            [footerHeight]="50"
+            [limit]="10"
+            rowHeight="auto"
+          >
+
+            <ngx-datatable-column name="title"></ngx-datatable-column>
+            <ngx-datatable-column name="category" ></ngx-datatable-column>
+            <ngx-datatable-column name="position"></ngx-datatable-column>
+            <ngx-datatable-column name="location"></ngx-datatable-column>
+            <ngx-datatable-column name="experience"></ngx-datatable-column>
+            <ngx-datatable-column name="salary"></ngx-datatable-column>
+            <ngx-datatable-column name="employeeType" ></ngx-datatable-column>
+            <ngx-datatable-column name="Actions">
+              <ng-template let-rowIndex="rowIndex" let-row="row" ngx-datatable-cell-template>
+                <button (click)="deleteRow(row)" type="button" class="btn btn-danger">  <i class="mdi mdi-delete"></i></button>
+              </ng-template>
+            </ngx-datatable-column>
+          </ngx-datatable>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
